@@ -42,7 +42,7 @@ namespace sf::priv
 std::vector<VideoMode> VideoModeImpl::getFullscreenModes()
 {
     // Retrieve all modes available for main screen only.
-    const auto cgmodes = CFPtr<const __CFArray>(CGDisplayCopyAllDisplayModes(CGMainDisplayID(), nullptr));
+    const auto cgmodes = CFPtr<CFArrayRef>(CGDisplayCopyAllDisplayModes(CGMainDisplayID(), nullptr));
 
     if (cgmodes == nullptr)
     {
